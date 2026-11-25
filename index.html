@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Aarna Boutique | Sarees, Kurtis and Western Wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500;6..96,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --wine:#4a1230; --wine2:#5d1a3d; --blush:#f6e3e8; --rose:#e9b8c4; --gold:#b8893b; --gold-l:#d7b06a;
+  --bg:#fffafb; --surface:#ffffff; --soft:#faeef1; --ink:#2a1523; --muted:#6f5864; --line:#ead7dc;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#160b13;--surface:#21101c;--soft:#1c0e17;--ink:#f6e9ee;--muted:#c3a9b6;--line:#3a2231;color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#160b13;--surface:#21101c;--soft:#1c0e17;--ink:#f6e9ee;--muted:#c3a9b6;--line:#3a2231;color-scheme:dark}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:300 17px/1.7 Jost,system-ui,sans-serif}
+h1,h2,h3{font-family:"Bodoni Moda",Georgia,serif;font-weight:400;margin:0;line-height:1.12;letter-spacing:-.01em}
+a{color:inherit}svg{display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px}
+
+.bar{background:var(--gold);color:#fff;text-align:center;font-size:14px;font-weight:500;padding:8px 16px}
+header.main{background:var(--wine);color:#fff}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:20px 0}
+.logo{font:500 28px "Bodoni Moda",serif;text-decoration:none;letter-spacing:.01em}
+.logo small{display:block;font:400 11px Jost,sans-serif;letter-spacing:.28em;color:var(--gold-l);margin-top:2px}
+.nav ul{display:flex;gap:30px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-weight:400;color:#ecd3dc}
+.nav ul a:hover{color:#fff}
+.btn{display:inline-flex;align-items:center;padding:14px 30px;font:500 15px Jost,sans-serif;text-decoration:none;border:1px solid transparent;cursor:pointer;border-radius:2px;letter-spacing:.03em}
+.btn.gold{background:var(--gold);color:#fff}
+.btn.gold:hover{background:#a37731}
+.btn.line{border-color:rgba(255,255,255,.4);color:#fff}
+.btn.line:hover{background:rgba(255,255,255,.08)}
+.btn.sm{padding:9px 18px;font-size:14px}
+
+.hero{display:grid;grid-template-columns:1fr 1.05fr;gap:44px;align-items:center;padding:56px 0 0}
+.hero h1{font-size:clamp(42px,6.2vw,76px);color:#fff}
+.hero p{color:#e3c7d1;font-size:19px;max-width:44ch;margin:24px 0 34px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.panels{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:end;height:460px}
+.pn{border-radius:200px 200px 0 0;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.pn svg{width:78%;margin-bottom:0}
+.pn.a{height:78%;background:var(--rose);color:var(--wine);--face:#f6e3e8}
+.pn.b{height:100%;background:var(--gold);color:var(--wine);--face:#e8c98d}
+.pn.c{height:66%;background:var(--blush);color:var(--wine2);--face:#fff}
+
+.strip{background:var(--wine2);color:#e9cdd7;margin-top:0}
+.strip .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;padding-top:20px;padding-bottom:20px;font-size:15px}
+.strip b{display:block;color:#fff;font-weight:500}
+
+section{padding:88px 0}
+.head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.head h2{font-size:clamp(32px,4.4vw,48px)}
+.head p{margin:12px 0 0;color:var(--muted);max-width:50ch}
+
+.cats{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.cat{background:var(--soft);border:1px solid var(--line);padding:26px 22px 24px;text-align:left;cursor:pointer;font:inherit;color:inherit;transition:border-color .2s,transform .2s}
+.cat:hover{border-color:var(--gold);transform:translateY(-4px)}
+.cat svg{width:56px;height:88px;color:var(--wine);--face:var(--soft);margin-bottom:16px}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .cat svg{color:var(--rose)}}
+:root[data-theme="dark"] .cat svg{color:var(--rose)}
+.cat h3{font-size:24px}
+.cat span{color:var(--muted);font-size:15px}
+
+.filters{display:flex;gap:8px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:9px 20px;font:400 15px Jost,sans-serif;cursor:pointer;border-radius:2px}
+.chip[aria-pressed="true"]{background:var(--wine);border-color:var(--wine);color:#fff}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold)}}
+:root[data-theme="dark"] .chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:24px;margin-top:28px}
+.card{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;transition:box-shadow .2s}
+.card:hover{box-shadow:0 20px 44px rgba(74,18,48,.16)}
+.card[hidden]{display:none}
+.pic{position:relative;height:300px;display:flex;align-items:flex-end;justify-content:center;overflow:hidden}
+.pic svg{width:46%;color:var(--wine);opacity:.85;--face:rgba(255,255,255,.6)}
+.pic img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tag{position:absolute;left:14px;top:14px;background:var(--wine);color:#fff;font-size:12px;font-weight:500;padding:4px 11px;letter-spacing:.04em}
+.tag.sale{background:var(--gold)}
+.info{padding:18px 20px 22px;display:flex;flex-direction:column;gap:4px;flex:1}
+.info h3{font:400 17px/1.4 Jost,sans-serif;letter-spacing:0}
+.info .meta{color:var(--muted);font-size:14px}
+.foot{display:flex;align-items:center;justify-content:space-between;margin-top:auto;padding-top:14px}
+.price{font:500 22px "Bodoni Moda",serif}
+.price s{font:300 14px Jost,sans-serif;color:var(--muted);margin-left:6px}
+
+.fest{background:var(--wine);color:#fff;display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center;padding:56px}
+.fest h2{font-size:clamp(30px,4.2vw,46px)}
+.fest p{color:#e3c7d1;margin:14px 0 24px;max-width:46ch}
+.code{border:1px solid var(--gold-l);padding:26px;text-align:center}
+.code b{display:block;font:500 36px "Bodoni Moda",serif;color:var(--gold-l);letter-spacing:.06em}
+.code span{color:#e3c7d1;font-size:15px}
+
+.services{background:var(--soft)}
+.svc{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.svc div{background:var(--surface);border:1px solid var(--line);padding:28px 24px}
+.svc svg{width:32px;height:32px;stroke:var(--gold);fill:none;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round;margin-bottom:16px}
+.svc h3{font-size:22px;margin-bottom:8px}
+.svc p{margin:0;color:var(--muted);font-size:16px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+.two h2{font-size:clamp(30px,4.2vw,44px);margin-bottom:18px}
+.two p{color:var(--muted)}
+blockquote{margin:30px 0 0;padding-left:22px;border-left:3px solid var(--gold)}
+blockquote p{color:var(--ink);font:400 22px/1.45 "Bodoni Moda",serif;margin:0 0 8px}
+blockquote cite{font-style:normal;color:var(--muted);font-size:15px}
+.visit{background:var(--soft);border:1px solid var(--line);padding:34px}
+.visit dl{margin:20px 0 28px;display:grid;grid-template-columns:90px 1fr;gap:12px 10px}
+.visit dt{color:var(--muted)}.visit dd{margin:0;font-weight:500}
+
+footer{background:var(--wine);color:#dcbfca;padding:50px 0 28px;font-size:15px}
+.fcols{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:36px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.14)}
+footer h4{color:#fff;margin:0 0 12px;font:500 16px Jost,sans-serif}
+footer ul{list-style:none;margin:0;padding:0;display:grid;gap:8px}
+footer a{text-decoration:none}footer a:hover{color:#fff}
+.copy{padding-top:20px;display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-size:14px}
+
+@media (max-width:900px){
+  .hero,.two,.fest{grid-template-columns:1fr}
+  .panels{height:340px}
+  .cats,.svc{grid-template-columns:repeat(2,1fr)}
+  .strip .wrap{grid-template-columns:repeat(2,1fr)}
+  .nav ul{display:none}
+  .fcols{grid-template-columns:1fr}
+  section{padding:60px 0}.fest{padding:34px 24px}
+}
+@media (max-width:520px){.cats,.svc{grid-template-columns:1fr}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.cat,.card{transition:none}}
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="saree" viewBox="0 0 100 160">
+      <path d="M36 6 L50 20 L64 6 L70 52 L62 60 L90 156 L10 156 L38 60 L30 52Z" fill="currentColor"/>
+      <path d="M64 6 L70 52 L40 110 L26 156 L10 156 L38 60 L62 60Z" fill="var(--face)" opacity=".5"/>
+      <path d="M30 52 L70 52" stroke="var(--face)" stroke-width="2"/>
+    </symbol>
+    <symbol id="kurti" viewBox="0 0 100 160">
+      <path d="M32 8 L50 22 L68 8 L92 46 L80 56 L72 42 L74 150 L26 150 L28 42 L20 56 L8 46Z" fill="currentColor"/>
+      <path d="M50 22 L50 70" stroke="var(--face)" stroke-width="2.5"/>
+      <path d="M28 96 L72 96" stroke="var(--face)" stroke-width="2"/>
+    </symbol>
+    <symbol id="dress" viewBox="0 0 100 160">
+      <path d="M38 6 L50 22 L62 6 L68 52 L60 62 L92 154 L8 154 L40 62 L32 52Z" fill="currentColor"/>
+      <path d="M34 62 L66 62" stroke="var(--face)" stroke-width="3"/>
+    </symbol>
+    <symbol id="gem" viewBox="0 0 100 160">
+      <circle cx="50" cy="40" r="12" fill="currentColor"/>
+      <path d="M50 54 L74 84 L50 136 L26 84Z" fill="currentColor"/>
+      <path d="M26 84 H74 M50 54 L50 136" stroke="var(--face)" stroke-width="2.5"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="bar">Festive season sale: flat 15% off on sarees. Free delivery above ₹1,500.</div>
+
+<header class="main">
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a class="logo" href="#top">Aarna<small>BOUTIQUE</small></a>
+      <ul>
+        <li><a href="#categories">Collections</a></li>
+        <li><a href="#shop">New arrivals</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#visit">Visit us</a></li>
+      </ul>
+      <a class="btn gold sm" href="https://wa.me/919800000000?text=Hi%20Aarna%20Boutique%2C%20I%20want%20to%20order" target="_blank" rel="noopener">Order on WhatsApp</a>
+    </nav>
+    <div class="hero" id="top">
+      <div>
+        <h1>Dressed for every occasion.</h1>
+        <p>Handpicked sarees, kurtis and western wear, with custom stitching made to your measurements. Styled in store, delivered to your door.</p>
+        <div class="cta">
+          <a class="btn gold" href="#shop">Shop new arrivals</a>
+          <a class="btn line" href="#services">Book custom stitching</a>
+        </div>
+      </div>
+      <div class="panels" aria-hidden="true">
+        <div class="pn a"><svg viewBox="0 0 100 160"><use href="#kurti"/></svg></div>
+        <div class="pn b"><svg viewBox="0 0 100 160"><use href="#saree"/></svg></div>
+        <div class="pn c"><svg viewBox="0 0 100 160"><use href="#dress"/></svg></div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="strip">
+  <div class="wrap">
+    <div><b>Custom stitching</b>Ready in 5 to 7 days</div>
+    <div><b>Free alterations</b>On every purchase</div>
+    <div><b>Easy exchange</b>Within 7 days</div>
+    <div><b>Home delivery</b>Across the city</div>
+  </div>
+</div>
+
+<section id="categories">
+  <div class="wrap">
+    <div class="head"><div><h2>Our collections</h2><p>Find the right outfit for work, festivals, weddings and everyday wear.</p></div></div>
+    <div class="cats">
+      <button class="cat" data-go="saree"><svg viewBox="0 0 100 160"><use href="#saree"/></svg><h3>Sarees</h3><span>Silk, cotton and designer</span></button>
+      <button class="cat" data-go="kurti"><svg viewBox="0 0 100 160"><use href="#kurti"/></svg><h3>Kurtis</h3><span>Daily wear and festive sets</span></button>
+      <button class="cat" data-go="dress"><svg viewBox="0 0 100 160"><use href="#dress"/></svg><h3>Western wear</h3><span>Dresses and co-ord sets</span></button>
+      <button class="cat" data-go="gem"><svg viewBox="0 0 100 160"><use href="#gem"/></svg><h3>Accessories</h3><span>Jewellery and clutches</span></button>
+    </div>
+  </div>
+</section>
+
+<section id="shop" style="padding-top:0">
+  <div class="wrap">
+    <div class="head">
+      <div><h2>New arrivals</h2><p>Tap Order to send your pick to us on WhatsApp. We confirm size and delivery.</p></div>
+      <div class="filters" role="group" aria-label="Filter by collection">
+        <button class="chip" data-f="all" aria-pressed="true">All</button>
+        <button class="chip" data-f="saree" aria-pressed="false">Sarees</button>
+        <button class="chip" data-f="kurti" aria-pressed="false">Kurtis</button>
+        <button class="chip" data-f="dress" aria-pressed="false">Western</button>
+        <button class="chip" data-f="gem" aria-pressed="false">Accessories</button>
+      </div>
+    </div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="wrap">
+    <div class="fest">
+      <div>
+        <h2>The festive edit is here.</h2>
+        <p>Silk sarees, embroidered anarkalis and statement jewellery, picked for weddings and celebrations. Message us with the code to get 15% off.</p>
+        <a class="btn gold" href="https://wa.me/919800000000?text=Hi%2C%20I%20want%20to%20use%20code%20FESTIVE15" target="_blank" rel="noopener">Claim the offer</a>
+      </div>
+      <div class="code"><b>FESTIVE15</b><span>15% off sarees, this season</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="head"><div><h2>Made for you</h2><p>Services that give you the perfect fit and a stress-free shopping experience.</p></div></div>
+    <div class="svc">
+      <div><svg viewBox="0 0 24 24"><path d="M3 17L17 3l4 4L7 21z"/><path d="M13 7l4 4M6 14l2 2M9 11l2 2"/></svg><h3>Custom stitching</h3><p>Blouses, kurtis and gowns stitched to your measurements. Bring your own fabric or choose ours.</p></div>
+      <div><svg viewBox="0 0 24 24"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><path d="M20 4L8.1 15.9M14.5 14.5L20 20M8.1 8.1L12 12"/></svg><h3>Alterations</h3><p>Free fitting adjustments on everything you buy from us. We make it fit just right.</p></div>
+      <div><svg viewBox="0 0 24 24"><path d="M12 3l2.5 6 6.5.5-5 4.3 1.6 6.4L12 16.8 6.4 20.2 8 13.8 3 9.5 9.5 9z"/></svg><h3>Bridal and event styling</h3><p>Plan your wedding or event outfits with a personal stylist. Appointments available daily.</p></div>
+      <div><svg viewBox="0 0 24 24"><path d="M2 6h12v10H2z"/><path d="M14 9h4l4 4v3h-8"/><circle cx="6" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></svg><h3>Home trial and delivery</h3><p>Not sure about a size? Try at home and exchange within 7 days. Free delivery above ₹1,500.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap two">
+    <div>
+      <h2>A boutique that listens</h2>
+      <p>Aarna started with a simple idea: everyone deserves clothes that fit well and feel special, without paying showroom prices. We pick every piece ourselves and work directly with weavers and designers.</p>
+      <p>Tell us the occasion, your budget and your style, and we will put together a few options for you to try.</p>
+      <blockquote><p>“My blouse fit perfectly and the saree colour was exactly what I wanted. They even delivered it two days before the wedding.”</p><cite>Meena, customer</cite></blockquote>
+    </div>
+    <div class="visit" id="visit">
+      <h2 style="font-size:32px">Visit the boutique</h2>
+      <dl>
+        <dt>Address</dt><dd>12, Main Road, Your City – 600 000</dd>
+        <dt>Phone</dt><dd>+91 98000 00000</dd>
+        <dt>Hours</dt><dd>Every day, 10 AM to 9 PM</dd>
+      </dl>
+      <a class="btn gold" href="https://wa.me/919800000000?text=Hi%20Aarna%20Boutique%2C%20I%20want%20to%20book%20an%20appointment" target="_blank" rel="noopener">Book an appointment</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="fcols">
+      <div><a class="logo" href="#top" style="color:#fff">Aarna<small>BOUTIQUE</small></a><p style="margin:14px 0 0;max-width:34ch">Sarees, kurtis, western wear and custom stitching.</p></div>
+      <div><h4>Collections</h4><ul><li><a href="#shop">Sarees</a></li><li><a href="#shop">Kurtis</a></li><li><a href="#shop">Western wear</a></li><li><a href="#shop">Accessories</a></li></ul></div>
+      <div><h4>Boutique</h4><ul><li><a href="#services">Services</a></li><li><a href="#about">About us</a></li><li><a href="#visit">Contact</a></li></ul></div>
+    </div>
+    <div class="copy"><span>© 2026 Aarna Boutique. All rights reserved.</span><span>Demo website. Name, phone and address are placeholders.</span></div>
+  </div>
+</footer>
+
+<script>
+var products=[
+ {n:"Banarasi silk saree with zari border",p:"saree",t:"Silk",r:4999,o:5999,bg:"#e9b8c4"},
+ {n:"Handloom cotton saree, everyday wear",p:"saree",t:"Cotton",r:1799,bg:"#f1d9a8"},
+ {n:"Kanchipuram-style silk saree",p:"saree",t:"Silk",r:6499,tag:"New",bg:"#d9b6cc"},
+ {n:"Embroidered anarkali kurti",p:"kurti",t:"Festive",r:1499,tag:"Best seller",bg:"#f4d1d9"},
+ {n:"Printed cotton kurti set",p:"kurti",t:"Daily wear",r:999,bg:"#e6e0c8"},
+ {n:"Straight-cut kurti with palazzo",p:"kurti",t:"Set",r:1299,bg:"#cfe0e2"},
+ {n:"A-line midi dress",p:"dress",t:"Western",r:1799,tag:"New",bg:"#f0c9c4"},
+ {n:"Linen co-ord set",p:"dress",t:"Western",r:2199,bg:"#e2d5e8"},
+ {n:"Floral maxi dress",p:"dress",t:"Western",r:1999,o:2399,bg:"#f6dcb4"},
+ {n:"Oxidised jhumka earrings",p:"gem",t:"Jewellery",r:349,bg:"#e8d8c0"},
+ {n:"Kundan necklace set",p:"gem",t:"Jewellery",r:899,tag:"Best seller",bg:"#f1d1d8"},
+ {n:"Embroidered potli clutch",p:"gem",t:"Bags",r:699,bg:"#d8c9de"}
+];
+var names={saree:"Sarees",kurti:"Kurtis",dress:"Western wear",gem:"Accessories"};
+var grid=document.getElementById("grid");
+function inr(n){return "₹"+n.toLocaleString("en-IN")}
+products.forEach(function(x,i){
+  var c=document.createElement("article");
+  c.className="card"; c.setAttribute("data-p",x.p);
+  var msg=encodeURIComponent("Hi Aarna Boutique, I want to order: "+x.n+" ("+inr(x.r)+")");
+  var tag=x.o?'<span class="tag sale">Sale</span>':(x.tag?'<span class="tag">'+x.tag+'</span>':'');
+  c.innerHTML='<div class="pic" style="background:'+x.bg+'"><svg viewBox="0 0 100 160" aria-hidden="true"><use href="#'+x.p+'"/></svg><img src="images/product-'+(i+1)+'.jpg" alt="" loading="lazy" onerror="this.remove()">'+tag+'</div>'+
+  '<div class="info"><h3>'+x.n+'</h3><div class="meta">'+names[x.p]+' · '+x.t+'</div><div class="foot"><span class="price">'+inr(x.r)+(x.o?'<s>'+inr(x.o)+'</s>':'')+'</span><a class="btn gold sm" target="_blank" rel="noopener" href="https://wa.me/919800000000?text='+msg+'">Order</a></div></div>';
+  grid.appendChild(c);
+});
+var chips=document.querySelectorAll(".chip");
+function filter(f){
+  chips.forEach(function(o){o.setAttribute("aria-pressed",o.getAttribute("data-f")===f?"true":"false")});
+  grid.querySelectorAll(".card").forEach(function(c){c.hidden=!(f==="all"||c.getAttribute("data-p")===f)});
+}
+chips.forEach(function(b){b.addEventListener("click",function(){filter(b.getAttribute("data-f"))})});
+document.querySelectorAll(".cat").forEach(function(b){
+  b.addEventListener("click",function(){filter(b.getAttribute("data-go"));document.getElementById("shop").scrollIntoView({behavior:"smooth"})});
+});
+</script>
+</body>
+</html>
